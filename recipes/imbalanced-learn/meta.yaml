@@ -1,9 +1,10 @@
+{% set version = "0.2.0.dev0" %}
 package:
   name: imbalanced-learn
-  version: "0.1.6"
+  version: {{ version }}
 
 source:
-  git_rev: 0.1.6
+  git_rev: {{ version }}
   git_url: https://github.com/scikit-learn-contrib/imbalanced-learn.git
 
 requirements:
@@ -30,7 +31,14 @@ about:
   home: https://github.com/scikit-learn-contrib/imbalanced-learn
   license: MIT
   license_file: LICENSE
+  summary: 'Python module to perform under sampling and over sampling with various techniques'
+  description: |
+    imbalanced-learn is a python package offering a number of re-sampling techniques commonly
+    used in datasets showing strong between-class imbalance. It is compatible with scikit-learn
+    and is part of scikit-learn-contrib projects.
+  doc_url: http://contrib.scikit-learn.org/imbalanced-learn/
+  dev_url: https://github.com/scikit-learn-contrib/imbalanced-learn
 
-# See
-# http://docs.continuum.io/conda/build.html for
-# more information about meta.yaml
+extra:
+  recipe-maintainers:
+    - Guillaume Lemaitre
