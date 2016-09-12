@@ -5,8 +5,9 @@ package:
   version: {{ version }}
 
 source:
-  git_rev: {{ version }}
-  git_url: https://github.com/scikit-learn-contrib/{{ name }}.git
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://github.com/scikit-learn-contrib/{{ name }}/archive/{{ version }}.tar.gz
+  sha256: ed97184e5665ea71b44222541b4c3d36daf4a8f6cf402df2976538082ff0509d
 
 build:
   number: 0
