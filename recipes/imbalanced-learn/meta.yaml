@@ -1,13 +1,14 @@
 {% set name = "imbalanced-learn" %}
-{% set version = "0.2.0.dev0" %}
+{% set version = "0.2.0" %}
+{% set sha256 = "e9f814e5263a90a3b32d32935ccce10bda8d3fca8dbe334732e374b22dbd9a21" %}
 package:
   name: imbalanced-learn
   version: {{ version }}
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/scikit-learn-contrib/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: ed97184e5665ea71b44222541b4c3d36daf4a8f6cf402df2976538082ff0509d
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
   number: 0
@@ -17,34 +18,38 @@ requirements:
   build:
     - python
     - setuptools
-    - numpy >=1.10.4
-    - scipy >=0.17.0
-    - scikit-learn >=0.17.1
+    - numpy x.x
+    - scipy
+    - nose
+
   run:
     - python
-    - numpy >=1.10.4
-    - scipy >=0.17.0
-    - scikit-learn >=0.17.1
+    - numpy x.x
+    - scipy
 
 test:
   requires:
     - nose
     - coverage
+
   imports:
     - imblearn
 
+  commands:
+    - nosetests imblearn
+
 about:
-  home: https://github.com/scikit-learn-contrib/{{ name }}
-  license: MIT
+  home: https://github.com/scikit-learn-contrib/imbalanced-learn
+  license_family: MIT
   license_file: LICENSE
   summary: 'Python module to perform under sampling and over sampling with various techniques'
   description: |
     imbalanced-learn is a python package offering a number of re-sampling techniques commonly
     used in datasets showing strong between-class imbalance. It is compatible with scikit-learn
     and is part of scikit-learn-contrib projects.
-  doc_url: http://contrib.scikit-learn.org/{{ name }}
-  dev_url: https://github.com/scikit-learn-contrib/{{ name }}
+  doc_url: http://contrib.scikit-learn.org/imbalanced-learn
+  dev_url: https://github.com/scikit-learn-contrib/imbalanced-learn
 
 extra:
   recipe-maintainers:
-    - Guillaume Lemaitre
+    - glemaitre
