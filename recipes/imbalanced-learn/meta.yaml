@@ -40,7 +40,7 @@ test:
 
 about:
   home: https://github.com/scikit-learn-contrib/imbalanced-learn
-  license_family: MIT
+  license: MIT
   license_file: LICENSE
   summary: 'Python module to perform under sampling and over sampling with various techniques'
   description: |
