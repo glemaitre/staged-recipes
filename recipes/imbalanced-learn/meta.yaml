@@ -20,12 +20,14 @@ requirements:
     - setuptools
     - numpy x.x
     - scipy
+    - scikit-learn
     - nose
 
   run:
     - python
     - numpy x.x
     - scipy
+    - scikit-learn
 
 test:
   requires:
