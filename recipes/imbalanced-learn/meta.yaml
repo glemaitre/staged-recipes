@@ -21,6 +21,7 @@ requirements:
     - numpy x.x
     - scipy
     - scikit-learn
+    - six
     - nose
 
   run:
@@ -28,6 +29,7 @@ requirements:
     - numpy x.x
     - scipy
     - scikit-learn
+    - six
 
 test:
   requires:
